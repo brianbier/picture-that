@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :username, presence: true
   validates :email, presence: true, uniqueness: true, length: { minimum: 4 }
   validates :password, presence: true, length: { in: 6..8} 
-  validates :bio, length: { in: 6..10 }
+  validates :bio, length: { minimum: 10 }
   validate :email_validator
 
 
