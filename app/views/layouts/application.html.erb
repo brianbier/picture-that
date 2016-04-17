@@ -2,21 +2,35 @@
 <html>
 <head>
   <title>PictureThat</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if logged_in? %>
-<%= link_to "Home", root_path %>
-<%= link_to "#{@user.email}", user_path(@user) %>
-<%= link_to "log out",logout_path, method: 'delete' %>
-<% else %>
-<%= link_to "login", login_path %>
-<%= link_to "Home", root_path %>
-<%= link_to "Sign up now!", new_user_path %>
-<% end %>
 
+  <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+            <%=link_to image_tag("picture-that-100.png"), {:action => 'index', :controller => 'posts'}, :class => 'image-home' %>
+            </div>  
+        
+            <div class="col-md-5">
+             
+            <% if logged_in? %>
+                <%= link_to "Log out", logout_path, method: "delete", :class=>"nbtn" %>
+             <% else %> 
+                <ul class="nav">
+                  <li><%= link_to 'Sign Up', new_user_path, :class=>"nbtn" %></li>
+                  <li><%= link_to 'Log In', login_path, :class=>"nbtn" %></li>
+                </ul>
+             <% end %> 
+            </div>
+          </div>
+        </div>
+      </div>
 <%= yield %>
 
 </body>
