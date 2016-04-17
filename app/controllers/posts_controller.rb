@@ -11,9 +11,12 @@ class PostsController < ApplicationController
       @post.user_id = current_user.id
       if @post.save
         @image_results = Post.bing_search(@post)   
+        Image.image_saver(@image_results,@post.id, @post.user_id)
+        @user = current_user
         render 'index'
       end
     else
+      @user = current_user
       @image_results = Post.bing_search(@post)
       render 'index'
     end
