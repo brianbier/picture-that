@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :posts
+  has_many :images
   validates :first_name, :last_name, :username, presence: true
   validates :email, presence: true, uniqueness: true, length: { minimum: 4 }
   validates :password, presence: true, length: { in: 6..8} 
