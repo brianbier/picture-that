@@ -1,0 +1,16 @@
+<h1>Login Page</h1>
+
+<% if @errors %>
+  <span>Please fix the following error:</span>
+  <ul>
+      <li><%= @errors %></li>
+  </ul>
+<% end %>
+
+<%= form_for(:session, url: login_path)  do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %> <br />
+  <%= f.label :password %>
+  <%= f.password_field :password %> <br />
+  <%= f.submit %>
+<% end %>
