@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_session_id] = user.id
       redirect_to user
     else
-      @errors = 'Wrong username or Password'
+      @errors = 'Wrong email or Password'
       render 'new'
     end
   end

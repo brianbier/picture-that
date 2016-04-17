@@ -1,18 +1,29 @@
-<h2>New User Form</h2>
-
+<div class='container'>
 <% if @errors %>
-  <span>Please fix the following errors:</span>
-  <ul>
+  <h4 class="error">Please fix the following errors:</h4>
+  <ul class="error">
     <% @errors.each do |error| %>
       <li><%= error %></li>
     <% end %>
   </ul>
 <% end %>
+</div>
+<div class="signup">
+  <div class="container">
+  <h2 class='heading'>Sign Up</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <%= form_for(@user) do |f| %>
+          <%= f.text_field :first_name, :placeholder => "First Name", :class => "userinfo" %>
+          <%= f.text_field :last_name, :placeholder => "Last Name", :class => "userinfo" %>
+          <%= f.text_field :bio, :placeholder => "Bio:", :class => "userinfo" %>
+          <%= f.text_field :username, :placeholder => "Username", :class => "userinfo" %>
+          <%= f.email_field :email, :placeholder => "E-mail Address", :class => "userinfo" %>
+          <%= f.password_field :password, :placeholder => "Password", :class => "userinfo" %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %> <br />
-  <%= f.label :password %>
-  <%= f.password_field :password %> <br />
-  <%= f.submit %>
-<% end %>
+          <%= f.submit "Sign up", :class=>"submit_btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
