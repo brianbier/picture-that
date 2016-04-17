@@ -23,6 +23,4 @@ class Post < ActiveRecord::Base
     return image_results
   end
 
-
-
 end
