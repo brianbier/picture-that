@@ -7,6 +7,26 @@
         </div>
     </div>
 
+    <div class="main_input">
+    
+        <%= form_for (@post) do |f| %>
 
+        <%= f.text_area :body, :placeholder => "Type your sentence here", size: "40x3", class:"text-field" %>
+      
+        <div class="pictobutton">
+        <%= f.submit "Picture That!", font: "Arial", class: "button-submit" %>
+       
+        </div>
+        <% end %>
+    <div class="bing-images">
+      <% if @image_results %>
+      <div class="picture_results">
+        <% @image_results.each do |value| %>
+          <%= image_tag(value, size: "116x116") %>
+        <% end %>
+      </div>  
+      <% end %>
+    </div>
+    </div>
   </div>
 </div>

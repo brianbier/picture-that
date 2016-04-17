@@ -1,15 +1,25 @@
-
+.text-field{
+  text-align: left;
+}
 .button-submit{
   color: #ffffff;
   background-color: #02C39A;
   border-radius: 4px;
   font-family: Arial;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .button-submit:hover {
   background: #2199e8;
   transition: background .65s ease;
   color:#fff;
+}
+
+.main{
+  margin-left:15%;
+}
+
+.bing-images{
+  margin-left:-50px;
+  width: 800px;
 }
