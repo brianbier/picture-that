@@ -1,0 +1,18 @@
+<h2>New User Form</h2>
+
+<% if @errors %>
+  <span>Please fix the following errors:</span>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %> <br />
+  <%= f.label :password %>
+  <%= f.password_field :password %> <br />
+  <%= f.submit %>
+<% end %>
