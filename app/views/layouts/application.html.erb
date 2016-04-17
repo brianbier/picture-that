@@ -20,7 +20,10 @@
             <div class="col-md-5">
              
             <% if logged_in? %>
-                <%= link_to "Log out", logout_path, method: "delete", :class=>"nbtn" %>
+              <ul class="nav">
+               <li> <%= link_to "Log out", logout_path, method: "delete", :class=>"nbtn" %></li>
+               <li> <%= link_to "#{@user.username}", user_path(current_user.id), :class=>"user-name" %></li>
+              </ul>
              <% else %> 
                 <ul class="nav">
                   <li><%= link_to 'Sign Up', new_user_path, :class=>"nbtn" %></li>

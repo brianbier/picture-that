@@ -1,6 +1,7 @@
 .header {
   background: #2199e8;
   transition: background .65s ease;
+  padding:40px;
 }
 .header:hover{
 //#02C39A I like this color
@@ -13,7 +14,21 @@ transition: background .65s ease;
   padding: 16px;
   float: right;
 }
-
+.user-name{
+  border-radius: 4px;
+  align: right;
+  font-family: Arial;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  width: 100px;
+  background: #02C39A;
+  padding: 10px 20px 10px 20px;
+  border: solid #FFFFFF 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .65s ease;
+}
 .nbtn {
   border-radius: 4px;
   align: right;
