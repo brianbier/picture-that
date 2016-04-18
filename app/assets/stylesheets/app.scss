@@ -1,12 +1,16 @@
 .header {
   background: #2199e8;
   transition: background .65s ease;
-  padding:40px;
+  padding:30px;
 }
 .header:hover{
 //#02C39A I like this color
 background-color: #9AE7D7;
 transition: background .65s ease;
+}
+
+.header img {
+width:120px;
 }
 
 .nav li {
