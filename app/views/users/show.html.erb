@@ -1,6 +1,27 @@
-<h1>Profile page</h1>
-<p><%= @user.email %></p>
 
-<% if flash[:notice] %>
-    <div><%= flash[:notice] %></div>
-<% end %>
+<div class="main">
+  <div class="instructions">
+<h1>Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
+
+    <div class="instructions">
+        <div class="container">
+          
+        </div>
+    </div>
+
+    <div class="main_input">
+    <div class="bing-images">
+      <div class="picture_results">
+        <% @post.each do |value| %>
+          <h4><%= value.body %></h4>
+          <% value.images.each do |image| %>
+            <%= image_tag(image.content, size: "116x116") %>
+          <% end %>
+            <hr>
+        <% end %>
+      </div>  
+    </div>
+    </div>
+  </div>
+  <%= will_paginate @post, renderer: BootstrapPagination::Rails, previous_label: "newer", next_label: "older"%>
+</div>
