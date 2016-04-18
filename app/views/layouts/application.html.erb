@@ -13,16 +13,17 @@
   <div class="header">
         <div class="container">
           <div class="row">
-            <div class="col-md-7">
-            <%=link_to image_tag("picture-that-100.png"), {:action => 'index', :controller => 'posts'}, :class => 'image-home' %>
+            <div class="col-md-5">
+            <%=link_to image_tag("picture-that-100.png"), {:action => 'show', :controller => 'posts'}, :class => 'image-home' %>
             </div>  
         
-            <div class="col-md-5">
+            <div class="col-md-6">
              
             <% if logged_in? %>
               <ul class="nav">
                <li> <%= link_to "Log out", logout_path, method: "delete", :class=>"nbtn" %></li>
                <li> <%= link_to "#{@user.username}", user_path(current_user.id), :class=>"user-name" %></li>
+               <li> <%= link_to "posts", posts_path, :class=>"nbtn" %></li>
               </ul>
              <% else %> 
                 <ul class="nav">
@@ -35,6 +36,5 @@
         </div>
       </div>
 <%= yield %>
-
 </body>
 </html>
