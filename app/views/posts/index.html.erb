@@ -1,32 +1,28 @@
+
 <div class="main">
-  <div class="container">
+  <div class="instructions">
+<h1> What is everyone talking about? </h1>
 
     <div class="instructions">
         <div class="container">
-          <p>Transform any sentence into images. Because words are boring.</p>
+          
         </div>
     </div>
 
     <div class="main_input">
-    
-        <%= form_for (@post) do |f| %>
-
-        <%= f.text_area :body, :placeholder => "Type your sentence here", size: "40x3", class:"text-field" %>
-      
-        <div class="pictobutton">
-        <%= f.submit "Picture That!", font: "Arial", class: "button-submit" %>
-       
-        </div>
-        <% end %>
     <div class="bing-images">
-      <% if @image_results %>
       <div class="picture_results">
-        <% @image_results.each do |value| %>
-          <%= image_tag(value, size: "116x116") %>
+        <% @post.each do |value| %>
+          <h4><%= value.body %></h4>
+          <% value.images.each do |image| %>
+            <%= image_tag(image.content, size: "116x116") %>
+          <% end %>
+            <hr>
         <% end %>
       </div>  
-      <% end %>
     </div>
     </div>
+
+    <%= will_paginate @post, renderer: BootstrapPagination::Rails, previous_label: "newer", next_label: "older"%>
   </div>
 </div>

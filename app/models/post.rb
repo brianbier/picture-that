@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   def self.bing_search(post)
     image_results = []
     words = post.body.split(' ')
-    bing = Bing.new("EmWIQAiZIVXEc4+uWv1fXP3Os0ZnCi042/FWa3wfpRQ",2,"Image")
+    bing = Bing.new("EmWIQAiZIVXEc4+uWv1fXP3Os0ZnCi042/FWa3wfpRQ",6,"Image")
     words. each do |word|
       bing_search_results = bing.search(word)
       image_count = bing_search_results[0][:Image].count
